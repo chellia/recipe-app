@@ -2,7 +2,7 @@
 
 It is a spring boot and angular project to showcase the recipe management.
 
-To Run the project
+# To Run the Application
 
 # First make sure the home-made-recipe-api up and running
 
@@ -27,4 +27,9 @@ login credentials are guest/welcome
 
 # Api documentation is available at 
 http://localhost:8000/api/swagger-ui/index.html?configUrl=/api/recipe-api-docs/swagger-config
+
+# To run in docker
+  docker-compose up
+
+the app will be running on http://localhost:9000
 

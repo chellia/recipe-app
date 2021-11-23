@@ -6,7 +6,7 @@ FROM openjdk:11
 VOLUME /tmp
 
 # Make port 8081 available to the world outside this container
-EXPOSE 8081
+EXPOSE 8000
 
 # The application's jar file
 ARG JAR_FILE=target/home-made-recipe-api-1.0.0-SNAPSHOT.jar

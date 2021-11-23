@@ -1,21 +1,17 @@
-version: '3.4'
+version: "3"
+
 services:
-  nginx:
-    container_name: nginx
-    image: form_angular
-    build: home-made-recipe-ui/.
-    ports:
-      - "80:80"
-    depends_on:
-      - restapi
-    networks:
-      - my-network
-  restapi:
-    container_name: restapi
-    image: form_rest
+  recipe-service:
+    container_name: recipe-service
     build: home-made-recipe-api/.
-    networks:
-      - my-network
-networks:
-  my-network:
-    driver: bridge
+    ports:
+      - 8000:8000 # App access Port, inside container it is 8000 and mappped with 8081
+    environment:
+      JAR : home-made-recipe-api-1.0.0-SNAPSHOT.jar
+  uiapp:
+    build: home-made-recipe-ui/.
+    container_name: ui-app
+    depends_on:
+      - recipe-service
+    ports:
+      - 9000:9000
