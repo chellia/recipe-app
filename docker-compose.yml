@@ -1,0 +1,21 @@
+version: '3.4'
+services:
+  nginx:
+    container_name: nginx
+    image: form_angular
+    build: home-made-recipe-ui/.
+    ports:
+      - "80:80"
+    depends_on:
+      - restapi
+    networks:
+      - my-network
+  restapi:
+    container_name: restapi
+    image: form_rest
+    build: home-made-recipe-api/.
+    networks:
+      - my-network
+networks:
+  my-network:
+    driver: bridge
