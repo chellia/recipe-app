@@ -1,0 +1,44 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle + ': ' + complaint?.number}}
+  </div>
+
+  <div class='card-body'
+       *ngIf='complaint'>
+    <div class='row'>
+      <div class='col-md-8'>
+        <div class='row'>
+          <div class='col-md-4'>Number:</div>
+          <div class='col-md-8'>{{complaint.number}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Description:</div>
+          <div class='col-md-8'>{{complaint.description}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Priority:</div>
+          <div class='col-md-8'>{{complaint.priority}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Solution:</div>
+          <div class='col-md-8'>{{complaint.solution}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>User</div>
+          <div class='col-md-8'>
+            <div class='col-md-8'>{{complaint.userDto.name}}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class='card-footer'>
+    <button class='btn btn-outline-secondary'
+            style='width:80px'
+            (click)='onBack()'>
+      <i class='fa fa-chevron-left'></i> Back
+    </button>
+  </div>
+</div>
